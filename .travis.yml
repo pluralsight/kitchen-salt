@@ -16,7 +16,6 @@ install:
   - export BUNDLE_GEMFILE=$PWD/Gemfile
   - bundle install
   - gem uninstall kitchen-vagrant
-  - bundle exec kitchen list
   - 'echo "driver:" >> .kitchen.local.yml'
   - 'echo "  name: ec2" >> .kitchen.local.yml'
   - 'echo "  aws_ssh_key_id: travis" >> .kitchen.local.yml'
@@ -26,6 +25,7 @@ install:
   - 'echo "  interface: dns" >> .kitchen.local.yml'
   - 'echo "transport:" >> .kitchen.local.yml'
   - 'echo "  ssh_key: ~/.ssh/id_rsa_travis" >> .kitchen.local.yml'
+  - bundle exec kitchen list
 
 script:
   - pwd
