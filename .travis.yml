@@ -15,6 +15,7 @@ install:
   - cd ../beaver-formula
   - export BUNDLE_GEMFILE=$PWD/Gemfile
   - bundle install
+  - gem uninstall kitchen-vagrant
   - bundle exec kitchen list
   - 'echo "driver:" >> .kitchen.local.yml'
   - 'echo "  name: ec2" >> .kitchen.local.yml'
